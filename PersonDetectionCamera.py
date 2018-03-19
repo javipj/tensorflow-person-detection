@@ -16,6 +16,8 @@ from requests.auth import HTTPBasicAuth
 
 from collections import defaultdict
 from io import StringIO
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 from PIL import Image
 # import ujson as json

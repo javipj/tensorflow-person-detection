@@ -29,5 +29,8 @@ RUN protoc object_detection/protos/*.proto --python_out=.
 RUN echo "export PYTHONPATH=${PYTHONPATH}:`pwd`:`pwd`/slim" >> ~/.bashrc
 RUN python setup.py install
 
+WORKDIR /tensorflow/models/research/object_detection
 
-CMD ["echo", "Running tensorflow docker"]
+RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/PersonDetectionCamera.py
+
+CMD ["python", "PersonDetectionCamera.py"]
