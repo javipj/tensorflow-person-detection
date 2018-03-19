@@ -1,6 +1,10 @@
 FROM gcr.io/tensorflow/tensorflow:1.5.0-devel-gpu
 RUN apt-get update && apt-get install -y \
   git
+  
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 -y 
+
+RUN apt update && apt install ffmpeg libav-tools x264 x265 -y
 
 RUN apt-get install -y protobuf-compiler \
   python-lxml \
@@ -33,4 +37,12 @@ WORKDIR /tensorflow/models/research/object_detection
 
 RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/PersonDetectionCamera.py
 
+RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/GetImages.sh
+
+
+CMD ["chmod","+x","GetImages.sh"]
+
+CMD ["./GetImages.sh"]
+
 CMD ["python", "PersonDetectionCamera.py"]
+

@@ -28,10 +28,10 @@ import sys
 import cv2
 
 # cam = 0 # Use  local webcam.
-url = 'rtsp://admin:888888@192.168.0.164:10554/tcp/av0_0'
+#url = 'rtsp://admin:888888@192.168.0.164:10554/tcp/av0_0'
 # cap = cv2.VideoCapture(cam)
 
-cap = cv2.VideoCapture(url)
+#cap = cv2.VideoCapture(url)
 
 # This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
@@ -131,14 +131,16 @@ IMAGE_SIZE = (12, 8)
 
 with detection_graph.as_default():
     with tf.Session(graph=detection_graph) as sess:
-        while(cap.isOpened()):
+        while True:
             
             # Read first and next image
-            ret,image = cap.read()
+            #time.sleep(0.2)
+            
+            image = cv2.imread('img.jpg')
 
             
             
-            if image is not None and ret is True:
+            if image is not None:
             
 
 
@@ -212,10 +214,8 @@ with detection_graph.as_default():
                     cv2.destroyAllWindows()
                     #	break
 
+               
+            if image is None:
+                print("No image fix me please")
+ 
 
-            
-            if ret is False:
-                cap.release()
-                cv2.destroyAllWindows()
-                cap = cv2.VideoCapture(url)
-                
