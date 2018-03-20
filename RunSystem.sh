@@ -1,1 +1,1 @@
-python PersonDetectionCamera.py & ./GetImages.sh & 
+python PersonDetectionCamera.py & ./GetImages.sh
