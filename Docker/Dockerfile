@@ -35,17 +35,10 @@ RUN python setup.py install
 
 WORKDIR /tensorflow/models/research/object_detection
 
-RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/PersonDetectionCamera.py
+COPY PersonDetectionCamera.py /tensorflow/models/research/object_detection
 
-RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/GetImages.sh
-
-RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/RunSystem.sh
+COPY GetImages.sh /tensorflow/models/research/object_detection
 
 RUN chmod +x GetImages.sh
 
-RUN chmod +x RunSystem.sh
-
-
-
-#CMD ["./RunSystem.sh"]
 
