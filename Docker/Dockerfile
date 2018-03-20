@@ -47,5 +47,5 @@ RUN chmod +x RunSystem.sh
 
 
 
-CMD [./RunSystem.sh"]
+CMD ["./RunSystem.sh"]
 
