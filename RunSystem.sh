@@ -1,1 +1,0 @@
-./GetImages.sh
