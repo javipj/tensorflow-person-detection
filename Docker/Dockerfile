@@ -42,5 +42,6 @@ RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/m
 RUN chmod +x GetImages.sh
 
 
-CMD ["./GetImages.sh"]
+
+CMD ["python", "PersonDetectionCamera.py","&","./GetImages.sh"]
 
