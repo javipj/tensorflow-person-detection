@@ -47,5 +47,5 @@ RUN chmod +x RunSystem.sh
 
 
 
-CMD ["python", "PersonDetectionCamera.py","&","./GetImages.sh"]
+CMD [./RunSystem.sh"]
 
