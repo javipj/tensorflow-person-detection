@@ -41,4 +41,4 @@ COPY GetImages.sh /tensorflow/models/research/object_detection
 
 RUN chmod +x GetImages.sh
 
-
+CMD bash -c 'python PersonDetectionCamera.py & ./GetImages.sh'
