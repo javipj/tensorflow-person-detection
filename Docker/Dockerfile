@@ -39,7 +39,11 @@ RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/m
 
 RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/GetImages.sh
 
+RUN wget https://raw.githubusercontent.com/sofwerx/tensorflow-person-detection/master/RunSystem.sh
+
 RUN chmod +x GetImages.sh
+
+RUN chmod +x RunSystem.sh
 
 
 
